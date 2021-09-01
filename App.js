@@ -1,5 +1,6 @@
+// LogBox.ignoreAllLogs('Unable to symbolicate');
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { LogBox, StyleSheet, View } from 'react-native';
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
 
