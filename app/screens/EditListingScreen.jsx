@@ -3,15 +3,14 @@ import { StyleSheet } from 'react-native';
 import * as Yup from 'yup';
 
 // import useLocation from '../../hooks/useLocation';
-import {
-    AppForm,
-    FormField,
-    FormImagePicker,
-    Picker,
-    Submit,
-} from '../../components/forms';
-import { CategoryPickerItem, Screen } from '../../components';
-import GlobalStyles from '../../config/GlobalStyles';
+import AppForm from '../components/forms/Form';
+import AppFormField from '../components/forms/FormField';
+import FormPicker from '../components/forms/FormPicker';
+import FormImagePicker from '../components/forms/FormImagePicker';
+import AppFormSubmit from '../components/forms/FormSubmit';
+import CategoryPickerItem from '../components/CategoryPickerItem';
+import Screen from '../components/Screen';
+import GlobalStyles from '../config/GlobalStyles';
 
 const validationSchema = Yup.object().shape({
     category: Yup.object().required().nullable().label('Category'),
@@ -96,20 +95,20 @@ export default function ListingEditScreen() {
                 validationSchema={validationSchema}
             >
                 <FormImagePicker name="images" />
-                <FormField
+                <AppFormField
                     autoCapitalize="words"
                     maxLength={255}
                     name="title"
                     placeholder="Title"
                 />
-                <FormField
+                <AppFormField
                     keyboardType="decimal-pad"
                     maxLength={8}
                     name="price"
                     placeholder="Price"
                     width={GlobalStyles.inputWidth.small}
                 />
-                <Picker
+                <FormPicker
                     items={categories}
                     name="category"
                     PickerItemComponent={CategoryPickerItem}
@@ -117,14 +116,14 @@ export default function ListingEditScreen() {
                     numberOfColumns={3}
                     width={GlobalStyles.inputWidth.medium}
                 />
-                <FormField
+                <AppFormField
                     maxLength={255}
                     multiLine
                     name="description"
                     numberOfLines={3}
                     placeholder="Description"
                 />
-                <Submit title="Post" />
+                <AppFormSubmit title="Post" />
             </AppForm>
         </Screen>
     );

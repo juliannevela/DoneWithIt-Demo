@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-import { Icon } from './';
+import Icon from './Icon';
 import GlobalStyles from '../config/GlobalStyles';
 
 export default function ImageInput({ imageUri, onChangeImage }) {

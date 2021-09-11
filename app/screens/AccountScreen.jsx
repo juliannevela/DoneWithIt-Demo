@@ -1,24 +1,26 @@
 import React from 'react';
 import { StyleSheet, FlatList, View } from 'react-native';
 
-import { Item, Separator } from '../components/lists';
-import { Screen, Icon } from '../components';
+import ListItem from '../components/lists/Item';
+import Separator from '../components/lists/Separator';
+import Screen from '../components/Screen';
+import Icon from '../components/Icon';
 
-import colors from '../config/colors';
+import GlobalStyles from '../config/GlobalStyles';
 
 const menuItems = [
     {
         title: 'My Listings',
         icon: {
             name: 'format-list-bulleted',
-            backgroundColor: colors.primary,
+            backgroundColor: GlobalStyles.colors.primary,
         },
     },
     {
         title: 'My Messages',
         icon: {
             name: 'email',
-            backgroundColor: colors.secondary,
+            backgroundColor: GlobalStyles.colors.secondary,
         },
     },
 ];
@@ -27,7 +29,7 @@ export default function AccountScreen() {
     return (
         <Screen style={styles.screen}>
             <View style={styles.container}>
-                <Item
+                <ListItem
                     image={require('../assets/nessima.png')}
                     title="Nessima Skye"
                     description="hello@juliannevela.dev"
@@ -40,7 +42,7 @@ export default function AccountScreen() {
                     data={menuItems}
                     keyExtractor={(menuItem) => menuItem.title}
                     renderItem={({ item }) => (
-                        <Item
+                        <ListItem
                             title={item.title}
                             IconComponent={
                                 <Icon
@@ -54,10 +56,13 @@ export default function AccountScreen() {
                     ItemSeparatorComponent={Separator}
                 />
             </View>
-            <Item
+            <ListItem
                 title="Log Out"
                 IconComponent={
-                    <Icon name="logout" backgroundColor={colors.logout} />
+                    <Icon
+                        name="logout"
+                        backgroundColor={GlobalStyles.colors.logout}
+                    />
                 }
             />
         </Screen>
@@ -71,9 +76,9 @@ const styles = StyleSheet.create({
     profileCard: {
         marginTop: 20,
         padding: 20,
-        backgroundColor: colors.white,
+        backgroundColor: GlobalStyles.colors.white,
     },
     screen: {
-        backgroundColor: colors.light,
+        backgroundColor: GlobalStyles.colors.light,
     },
 });

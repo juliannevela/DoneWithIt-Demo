@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Platform, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import GlobalStyles from '../../config/GlobalStyles';
+import GlobalStyles from '../config/GlobalStyles';
 
 export default function ViewImage() {
     return (
@@ -22,7 +22,7 @@ export default function ViewImage() {
             <Image
                 style={styles.image}
                 resizeMode={'contain'}
-                source={require('../../assets/chair.jpg')}
+                source={require('../assets/chair.jpg')}
             />
         </View>
     );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import { Item } from '../../components/lists';
-import GlobalStyles from '../../config/GlobalStyles';
-import { AppText } from '../../components';
+import ListItem from '../components/lists/Item';
+import GlobalStyles from '../config/GlobalStyles';
+import AppText from '../components/Text';
 
 export default function Details() {
     return (
         <View>
             <Image
-                source={require('../../assets/jacket.jpg')}
+                source={require('../assets/jacket.jpg')}
                 style={styles.image}
             />
             <View style={styles.details}>
@@ -17,8 +17,8 @@ export default function Details() {
                 <AppText style={styles.price}>$100</AppText>
             </View>
             <View style={styles.userContainer}>
-                <Item
-                    image={require('../../assets/nessima.png')}
+                <ListItem
+                    image={require('../assets/nessima.png')}
                     title="Nessi Skye"
                     subTitle="5 Listings"
                 />

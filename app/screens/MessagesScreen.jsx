@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FlatList, RefreshControl } from 'react-native';
 
-import { Item, DeleteAction, Separator } from '../components/lists';
-import { Screen } from '../components';
+import ListItem from '../components/lists/Item';
+import DeleteAction from '../components/lists/DeleteAction';
+import Separator from '../components/lists/Separator';
+import Screen from '../components/Screen';
 
 const InitialMessages = [
     {
@@ -49,7 +51,7 @@ export default function Messages() {
                 data={messages}
                 keyExtractor={(message) => message.id.toString()}
                 renderItem={({ item }) => (
-                    <Item
+                    <ListItem
                         description={item.description}
                         image={item.image}
                         onPress={() => console.log('Pressed: ', item)}
