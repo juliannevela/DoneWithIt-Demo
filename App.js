@@ -1,22 +1,21 @@
-// LogBox.ignoreAllLogs('Unable to symbolicate');
-import React from 'react';
-import { LogBox, StyleSheet, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+
+const Root = createNativeStackNavigator();
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <WelcomeScreen />
-        </View>
+        <NavigationContainer>
+            <Root.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
+                <Root.Screen name="Auth" component={AuthNavigator} />
+            </Root.Navigator>
+        </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

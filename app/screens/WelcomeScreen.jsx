@@ -1,16 +1,11 @@
-import React from 'react';
-import {
-    ImageBackground,
-    StyleSheet,
-    View,
-    Platform,
-    Image,
-} from 'react-native';
+import * as React from 'react';
+import { ImageBackground, StyleSheet, View, Image } from 'react-native';
 
-import { Button, Text } from '../components';
+import AppButton from '../components/Button';
+import AppText from '../components/Text';
 import GlobalStyles from '../config/GlobalStyles';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
     return (
         <ImageBackground
             source={require('../assets/background.jpg')}
@@ -22,17 +17,19 @@ export default function WelcomeScreen() {
                     style={styles.logo}
                     source={require('../assets/logo-red.png')}
                 />
-                <Text style={styles.tagline}>Sell What You Don't Want</Text>
+                <AppText style={styles.tagline}>
+                    Sell What You Don't Want
+                </AppText>
             </View>
             <View style={styles.buttonsContainer}>
-                <Button
+                <AppButton
                     title="Login"
-                    onPress={() => console.log('Login')}
+                    onPress={() => navigation.navigate('Login')}
                     backgroundColor={GlobalStyles.colors.primary}
                 />
-                <Button
+                <AppButton
                     title="Register"
-                    onPress={() => console.log('Register')}
+                    onPress={() => navigation.navigate('Register')}
                     backgroundColor={GlobalStyles.colors.secondary}
                 />
             </View>
