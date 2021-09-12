@@ -7,6 +7,7 @@ import Screen from '../components/Screen';
 import Icon from '../components/Icon';
 
 import GlobalStyles from '../config/GlobalStyles';
+import routes from '../navigation/routes';
 
 const menuItems = [
     {
@@ -22,7 +23,7 @@ const menuItems = [
             name: 'email',
             backgroundColor: GlobalStyles.colors.secondary,
         },
-        targetScreen: 'Messages',
+        targetScreen: routes.MESSAGES,
     },
 ];
 

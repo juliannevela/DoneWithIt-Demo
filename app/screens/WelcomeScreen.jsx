@@ -4,6 +4,7 @@ import { ImageBackground, StyleSheet, View, Image } from 'react-native';
 import AppButton from '../components/Button';
 import AppText from '../components/Text';
 import GlobalStyles from '../config/GlobalStyles';
+import routes from '../navigation/routes';
 
 export default function WelcomeScreen({ navigation }) {
     return (
@@ -24,12 +25,12 @@ export default function WelcomeScreen({ navigation }) {
             <View style={styles.buttonsContainer}>
                 <AppButton
                     title="Login"
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.navigate(routes.LOGIN)}
                     backgroundColor={GlobalStyles.colors.primary}
                 />
                 <AppButton
                     title="Register"
-                    onPress={() => navigation.navigate('Register')}
+                    onPress={() => navigation.navigate(routes.REGISTER)}
                     backgroundColor={GlobalStyles.colors.secondary}
                 />
             </View>
