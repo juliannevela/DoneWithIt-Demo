@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import * as Yup from 'yup';
 
 import AppForm from '../components/forms/Form';
@@ -15,7 +14,7 @@ const validationSchema = Yup.object().shape({
 
 export default function RegisterScreen() {
     return (
-        <Screen style={styles.container}>
+        <Screen>
             <AppForm
                 initialValues={{ name: '', email: '', password: '' }}
                 onSubmit={(values) => console.log(values)}
@@ -53,9 +52,3 @@ export default function RegisterScreen() {
         </Screen>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 10,
-    },
-});

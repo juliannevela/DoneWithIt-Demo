@@ -5,31 +5,31 @@ import ListItem from '../components/lists/Item';
 import GlobalStyles from '../config/GlobalStyles';
 import AppText from '../components/Text';
 
-export default function Details() {
+export default function ListingDetails({ route }) {
+    const listing = route.params;
+
     return (
-        <View>
-            <Image
-                source={require('../assets/jacket.jpg')}
-                style={styles.image}
-            />
+        <View style={styles.container}>
+            <Image source={listing.image} style={styles.image} />
             <View style={styles.details}>
-                <AppText style={styles.title}>Red jacket for sale!</AppText>
-                <AppText style={styles.price}>$100</AppText>
+                <AppText style={styles.title}>{listing.title}</AppText>
+                <AppText style={styles.price}>${listing.price}</AppText>
             </View>
-            <View style={styles.userContainer}>
-                <ListItem
-                    image={require('../assets/nessima.png')}
-                    title="Nessi Skye"
-                    subTitle="5 Listings"
-                />
-            </View>
+            <ListItem
+                image={require('../assets/juli.jpeg')}
+                title="Nessi Skye"
+                description="5 Listings"
+            />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     details: {
-        padding: 20,
+        padding: 10,
     },
     image: {
         width: '100%',
@@ -45,8 +45,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600',
         color: GlobalStyles.colors.black,
-    },
-    userContainer: {
-        marginVertical: 10,
     },
 });

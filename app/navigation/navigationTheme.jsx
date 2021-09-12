@@ -1,4 +1,5 @@
 import { DefaultTheme } from '@react-navigation/native';
+
 import GlobalStyles from '../config/GlobalStyles';
 
 export default {

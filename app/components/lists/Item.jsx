@@ -49,23 +49,21 @@ export default function ListItem({
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        flexDirection: 'row',
         alignItems: 'center',
-        padding: 15,
         backgroundColor: GlobalStyles.colors.white,
+        flexDirection: 'row',
+        padding: 10,
     },
     description: {
         fontSize: 12,
         color: GlobalStyles.colors.medium,
     },
     image: {
-        width: 70,
-        height: 70,
-        borderRadius: 35,
+        width: 80,
+        height: 80,
+        borderRadius: 40,
     },
     info: {
-        flex: 1,
         marginLeft: 10,
         justifyContent: 'center',
     },

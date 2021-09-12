@@ -70,7 +70,7 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor: GlobalStyles.colors.light,
+        backgroundColor: GlobalStyles.colors.white,
         borderRadius: 15,
         height: 100,
         justifyContent: 'center',

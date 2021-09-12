@@ -22,12 +22,13 @@ const menuItems = [
             name: 'email',
             backgroundColor: GlobalStyles.colors.secondary,
         },
+        targetScreen: 'Messages',
     },
 ];
 
-export default function AccountScreen() {
+export default function AccountScreen({ navigation }) {
     return (
-        <Screen style={styles.screen}>
+        <Screen>
             <View style={styles.container}>
                 <ListItem
                     image={require('../assets/nessima.png')}
@@ -50,7 +51,9 @@ export default function AccountScreen() {
                                     backgroundColor={item.icon.backgroundColor}
                                 />
                             }
-                            onPress={() => console.log(item.title)}
+                            onPress={() =>
+                                navigation.navigate(item.targetScreen)
+                            }
                         />
                     )}
                     ItemSeparatorComponent={Separator}
@@ -75,10 +78,7 @@ const styles = StyleSheet.create({
     },
     profileCard: {
         marginTop: 20,
-        padding: 20,
+        // padding: 20,
         backgroundColor: GlobalStyles.colors.white,
-    },
-    screen: {
-        backgroundColor: GlobalStyles.colors.light,
     },
 });

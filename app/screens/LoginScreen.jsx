@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
 
 export default function LoginScreen() {
     return (
-        <Screen style={styles.container}>
+        <Screen>
             <Image
                 source={require('../assets/logo-red.png')}
                 style={styles.logo}
@@ -49,14 +49,11 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 10,
-    },
     logo: {
         width: 80,
         height: 80,
         alignSelf: 'center',
-        marginTop: 50,
+        marginTop: 20,
         marginBottom: 20,
     },
 });

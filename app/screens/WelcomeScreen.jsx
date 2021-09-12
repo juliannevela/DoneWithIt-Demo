@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     logoContainer: {
         flex: 1,
         alignItems: 'center',
-        marginTop: 50,
+        marginTop: 100,
     },
     logo: {
         width: 100,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     tagline: {
-        paddingVertical: 20,
+        paddingVertical: 40,
         fontSize: 22,
         fontWeight: '600',
         textAlign: 'center',
